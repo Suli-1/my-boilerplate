@@ -17,7 +17,7 @@ server.get('/api/v1/test', (req,res) => {
 if (process.env.NODE_ENV === 'production') {
     server.use(express.static(path.resolve('client/build')))
     server.get('/*', (req,res) => {
-        res.send(path.resolve('client/build/index.js'))
+        res.sendFile(path.resolve('client/build/index.js'))
     })
 }
 
